@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "rex": "1.0.1"
+    "rex": "1.0.2"
   }
 }

@@ -2,15 +2,22 @@ Rex('app.view.details', [
   
     '$'
   , 'get'
+  , 'or'
   , 'replace'
   , 'h'
   , 'h.reflow'
+  , 'route.pushState'
+  , 'app.service.echo'
   , 'app.service.shots'
   , 'app.widget.shot'
   
-], function ($, get, replace, h, reflow, service, shot) {
+], function ($, get, or, replace, h, reflow, pushState, echo, service, shot) {
   
   return function (state, param) {
+    
+    function init(data) {
+      render(data), echo();
+    }
     
     function render(data) {
       reflow($('main'), h('main', [
@@ -18,7 +25,9 @@ Rex('app.view.details', [
           , h('li.description_back', [
               h('img.description_icon', {
                   src: '../content/img/back.svg'
-                , onclick: window.history.back.bind(window.history)
+                , onclick: function (evetn) {
+                    event.stopPropagation(), pushState(state, null, '/');
+                  }
               })
             ])
           , shot(data)
@@ -31,7 +40,7 @@ Rex('app.view.details', [
       ]));
     }
     
-    service(param.id)(render);
+    or(state, {}).shot ? init(state.shot) : service(param.id)(init);
     
   };
   

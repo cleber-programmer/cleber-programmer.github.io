@@ -6,12 +6,13 @@
 }
 
 .shot_image {
-  max-width: 300px;
+  height: 225px;
+  width: 300px;
 }
 
 .shot_legend {
   background: rgba(0, 0, 0, .7);
-  bottom: 14px;
+  bottom: 16px;
   color: #FFFFFF;
   display: block;
   padding: 10px;
