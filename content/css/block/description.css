@@ -1,0 +1,37 @@
+.description {
+  display: inline-block;
+  max-width: 320px;
+  text-align: left;
+}
+
+.description_avatar {
+  border-radius: 50%;
+  float: left;
+  width: 50px;
+}
+
+.description_back {
+  height: 50px;
+  padding: 10px;
+}
+
+.description_icon {
+  cursor: pointer;
+  height: inherit;
+}
+
+.description_name {
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 50px;
+  padding: 0 10px 0 20px;
+}
+
+.description_text {
+  padding: 10px;
+}
+
+.description_user {
+  overflow: auto;
+  padding: 10px;
+}
