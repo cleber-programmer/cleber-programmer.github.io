@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>evnts</title>
-  <link rel="stylesheet" href="benchmark/evnts/style.css">
+  <script type="text/javascript" src="dist/polyfill.min.js"></script>
+  <script type="text/javascript" src="dist/rex.min.js"></script>
+  <script type="text/javascript" src="dist/evnts.min.js"></script>
 </head>
 <body>
 
@@ -30,22 +32,23 @@
   </script>
 
   <script id="hotels" type="text/tmpl">
-    <table class="hotels">
+    <table class="info">
       <% for(var i = 0; i < hotels.length; i++) { %>
-        <tr class="hotels_item" data-id="<%= hotels[i].id %>">
-          <td class="hotels_name"><%= hotels[i].name %></td>
-          <td class="hotels_distance"><%= hotels[i].distanceToEvent %></td>
-          <td class="hotels_price"><%= hotels[i].rooms.shift().price %></td>
+        <tr class="info_item" data-id="<%= hotels[i].id %>">
+          <td class="info_name"><%= hotels[i].name %></td>
+          <td class="info_description"><%= hotels[i].distanceToEvent %></td>
+          <td class="info_price"><%= hotels[i].rooms.shift().price %></td>
         </tr>
       <% } %>
-    </tr>
     </table>
     <a class="event_more" href="#">Ocultar hoteis</a>
+    <% for(var i = 0; i < hotels.length; i++) { %>
+      <link rel="preload" href="<%= hotels[i].image %>" as="image">
+    <% } %>
   </script>
 
-  <script type="text/javascript" src="dist/polyfill.min.js"></script>
-  <script type="text/javascript" src="dist/rex.min.js"></script>
-  <script type="text/javascript" src="dist/evnts.min.js"></script>
+  <link rel="stylesheet" href="benchmark/evnts/style.css">
+  <link rel="prefetch" href="./hotel.html" as="html" crossorigin>
 
 </body>
 </html>

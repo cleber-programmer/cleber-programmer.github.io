@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>evnts</title>
-  <link rel="stylesheet" href="benchmark/evnts/style.css">
+  <script type="text/javascript" src="dist/polyfill.min.js"></script>
+  <script type="text/javascript" src="dist/rex.min.js"></script>
+  <script type="text/javascript" src="dist/evnts.min.js"></script>
 </head>
 <body>
 
-  <main class="hotel">
+  <main class="hotel" is="evnts-hotel">
+  </main>
+
+  <script id="hotel" type="text/tmpl">
     <header class="hotel_head">
       <a class="hotel_back" href="./index.html">
         Eventos
       </a>
-      <h2 class="hotel_name">Wall Deluxe Hotel</h2>
-      <strong class="hotel_star">&#9733;&#9733;&#9733;</strong>
+      <h2 class="hotel_name"><%= name %></h2>
+      <strong class="hotel_star"><%= Array(~~stars).toString().split(',').map(() => '&#9733;').join('') %></strong>
     </header>
-    <section class="hotel_image" src="https://unsplash.it/451">
-      https://unsplash.it/451
+    <section class="hotel_image" src="<%= image %>" is="evnts-image">
+      <%= image %>
     </section>
     <content class="hotel_body">
-      <p class="hotel_description">Vilibazmosa iderenni emilun. Zyhys onoso jehikagon Aeksiot epi, se gis hen syndrorro jemagon. Sikudi nopazmi! Toli rhuqo lotinti, kostilus. Skorī demalyti tymptir tymis, erinis ia morghulis.</p>
-      <ul>
-        <li class="hotel_tag">breakfast</li>
-        <li class="hotel_tag">wi-fi</li>
-        <li class="hotel_tag">gym</li>
-        <li class="hotel_tag">parking</li>
+      <p class="hotel_description"><%= description %></p>
+      <ul class="hotel_amenities">
+        <% for (var i = 0; i < amenities.length; i++) { %>
+          <li class="hotel_tag"><%= amenities[i] %></li>
+        <% } %>
       </ul>
+      <table class="info">
+        <% for(var i = 0; i < rooms.length; i++) { %>
+          <tr class="info_item" data-id="<%= rooms[i].id %>">
+            <td class="info_name"><%= rooms[i].name %></td>
+            <td class="info_description"><%= (rooms[i].beds || rooms[i].bed).join(', ') %></td>
+            <td class="info_price"><%= rooms[i].price %></td>
+          </tr>
+        <% } %>
+      </table>
     </content>
     <form class="hotel_lead">
       <h3 class="hotel_name">Faça sua Reserva</h3>
@@ -48,11 +63,10 @@
         Enviar
       </button>
     </form>
-  </main>
+  </script>
 
-  <script type="text/javascript" src="dist/polyfill.min.js"></script>
-  <script type="text/javascript" src="dist/rex.min.js"></script>
-  <script type="text/javascript" src="dist/evnts.min.js"></script>
+  <link rel="stylesheet" href="benchmark/evnts/style.css">
+  <link rel="prefetch" href="./index.html" as="html" crossorigin>
 
 </body>
 </html>

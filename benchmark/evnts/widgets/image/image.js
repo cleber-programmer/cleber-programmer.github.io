@@ -5,9 +5,9 @@ Rex(function ({ atom }) {
 
     @atom.attached
     echo() {
-      requestAnimationFrame(() => {
-        this.style.backgroundImage = `url(${ this.getAttribute('src') })`;
-      });
+      requestAnimationFrame(() =>
+        this.style.backgroundImage = `url(${ this.getAttribute('src') })`
+      )
     }
 
   }
