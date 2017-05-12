@@ -338,8 +338,24 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   clear: both;
-  height: 588px;
+  height: 262px;
   text-indent: -9999px;
+}
+
+@media (min-width: 601px) {
+
+  .hotel_image {
+    height: 474px;
+  }
+
+}
+
+@media (min-width: 769px) {
+
+  .hotel_image {
+    height: 632px;
+  }
+
 }
 
 .hotel_body {
