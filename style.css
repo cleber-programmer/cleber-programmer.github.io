@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Roboto:300,500|Yrsa:300');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,500|Yrsa:300');
 
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ ul {
   position: relative;
 
   --date_color: #626262;
-  --date_font: 'Audiowide', cursive;
+  --date_font: 'Abril Fatface', cursive;
   --date_size: 24px;
 
   --name_color: #2C2C2C;
