@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" contet="width=device-width, initial-scale=1">
   <title>Evnts | Hotel</title>
-  <link rel="stylesheet" href="dist/evnts.hotel.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="dist/evnts.css">
+  <script type="text/javascript" src="bower_components/appbase-js/browser/appbase.js"></script>
+  <script type="text/javascript" src="dist/evnts.js"></script>
 </head>
 <body>
+  
+  <ul class="hotel">
 
-  <nav class="header">
-    <a class="header_link" href="perfil.html">Perfil</a>
-    <a class="header_link" href="evento.html">Eventos</a>
-  </nav>
+    <li class="hotel_spot">
+      <figure>
+        <img class="hotel_thumbnail" src="https://www.barcelo.com/en-us/images/385-swimming-pool-4-hotel-barcelo-royal-hideaway-playacar-resort_tcm21-34268_w1600_h611_n.jpg">
+      </figure>
+    </li>
 
-  <main class="dashboard">
-    <section class="valor">
-      <div class="valor_total" data-rotulo="Valor total das vendas">4.346,94</div>
-      <div class="valor_sacado" data-rotulo="Valor sacado">0,00</div>
-      <div class="valor_estimado" data-rotulo="Valor para o proximo saque">1.086,73</div>
-    </section>
-
-    <section class="historico">
-      <h2 class="historico_titulo">Histórico de transações</h2>
+    <li class="hotel_spot">
+      <strong class="hotel_chain">Rede XPTO</strong>
+      <h1 class="hotel_name">Novotel Rio de Janeiro Parque Olímpico</h1>
       <ul>
-        <li class="historico_transacao">
-          <strong class="historico_status">Online</strong>
-          <time class="historico_data">2017-01-25 16:04:00</time>
-          <span class="historico_valor">50.000,00</span>
-        </li>
-        <li class="historico_transacao">
-          <strong class="historico_status">Online</strong>
-          <time class="historico_data">2017-01-25 16:04:00</time>
-          <span class="historico_valor">50.000,00</span>
-        </li>
+        <li class="hotel_star">&#9733</li>
+        <li class="hotel_star">&#9733</li>
+        <li class="hotel_star">&#9733</li>
+        <li class="hotel_star">&#9733</li>
       </ul>
-    </section>
-
-    <section class="saque">
-      <h2 class="saque_titulo">Próximos saques</h2>
+    </li>
+    
+    <li class="hotel_spot">
+      <p class="hotel_description">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos</p>
       <ul>
-        <li class="saque_lancamento">
-          <time class="historico_data">2017-01-30</time>
-          <span class="historico_valor">10,99</span>
-          <button class="saque_pagamento">Solicitar pagamento</button>
-        </li>
-        <li class="saque_lancamento">
-          <time class="historico_data">2017-02-15</time>
-          <span class="historico_valor">405,40</span>
-        </li>
-        <li class="saque_lancamento">
-          <time class="historico_data">2017-02-30</time>
-          <span class="historico_valor">25.978,02</span>
-        </li>
+        <li class="hotel_amenitie">wi-fi</li>
+        <li class="hotel_amenitie">café da manhã</li>
+        <li class="hotel_amenitie">academia</li>
+        <li class="hotel_amenitie">piscina</li>
+        <li class="hotel_amenitie">ar condicionado</li>
+        <li class="hotel_amenitie">estacionamento</li>
       </ul>
-    </section>
-  </main>
+    </li>
+    
+    <li class="hotel_spot">
+      <var class="hotel_charge">120,00<sup>Taxa de Serviço</sup></var>
+      <time class="hotel_checkIn">13:00</time>
+      <span class="hotel_to">&rarr;</span>
+      <time class="hotel_checkOut">12:00</time>
+    </li>
 
-  <script src="dist/evnts.hotel.js"></script>
-  <script>
-    [].forEach.call(document.querySelectorAll('*'), function (a) { a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16) })
-  </script>
+    <li class="hotel_spot">
+      <address class="hotel_address">Floro de Oliveira, 361 - Jardim Adriana - Guarulhos - São Paulo</address>
+      <iframe class="hotel_map" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=17&center=-23.4286%2C-46.5281&key=AIzaSyB-VHHKA6iU5cnHgxalz78KTcg8b6ZpMs8" allowfullscreen></iframe>
+      <a class="hotel_gps" href="geo:37.786971,-122.399677;u=35"></a>
+    </li>
+
+    <li class="hotel_spot">
+      <address class="hotel_email">cleber.programmer@evnts.com.br</address>
+      <a class="hotel_send" href="mailto:cleber.programmer@evnts.com.br"></a>
+    </li>
+
+    <li class="hotel_spot">
+      <a class="hotel_phone">+55 11 94631-4083</a>
+      <a class="hotel_call" href="tel:94631-4083"></a>
+    </li>
+
+    <li class="hotel_spot">
+      <strong class="hotel_cnpj">88.952.275/0001-76</strong>
+      <h2 class="hotel_social">Grand Hyatt Rio De Janeiro</h2>
+      <strong class="hotel_iss">145/1990</strong>
+    </li>
+
+    <li class="hotel_spot">
+      <span class="hotel_term-accept">Yes</span>
+      <p class="hotel_rule">Autorizo replicar tarifas e bloqueios de um evento para outro evento na mesma data</p>
+    </li>
+    
+  </ul>
+
 </body>
 </html>
