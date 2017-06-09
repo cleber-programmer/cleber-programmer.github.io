@@ -224,9 +224,9 @@ ul {
   color: var(--COLOR-MASTER-DARKEST);
   display: flex;
   float: left;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   height: 60px;
   justify-content: center;
   text-transform: lowercase;
@@ -246,9 +246,9 @@ ul {
   color: var(--COLOR-MASTER-DARKEST);
   display: flex;
   float: left;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   height: 60px;
   justify-content: center;
   text-transform: uppercase;
