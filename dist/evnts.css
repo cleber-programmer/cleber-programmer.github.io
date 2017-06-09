@@ -32,7 +32,7 @@
 
 
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -221,12 +221,12 @@ ul {
   color: var(--COLOR-MASTER-DARKEST);
   display: flex;
   float: left;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   height: 60px;
   justify-content: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   width: 70%;
 }
 
@@ -245,7 +245,7 @@ ul {
   float: left;
   font-size: 18px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   height: 60px;
   justify-content: center;
   text-transform: uppercase;
@@ -267,10 +267,10 @@ ul {
 }
 
 .hotel_social {
-  color: var(--COLOR-INFO-LIGHT);
+  color: var(--COLOR-MASTER-DARKEST);
   display: block;
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -295,9 +295,8 @@ ul {
   display: flex;
   float: right;
   font-size: 11px;
-  font-weight: 100;
+  font-weight: 400;
   height: 40px;
-  justify-content: center;
   text-transform: uppercase;
   width: calc(100% - 50px);
 }
