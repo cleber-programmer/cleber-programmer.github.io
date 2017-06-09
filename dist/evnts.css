@@ -165,11 +165,12 @@ ul {
 .hotel_checkIn:before {
   bottom: -10px;
   color: var(--COLOR-INFO-LIGHT);
-  content: 'check in';
+  content: 'Check In';
   font-size: 11px;
-  left: 2px;
+  left: 0;
   position: absolute;
-  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
 }
 
 .hotel_to {
@@ -177,6 +178,7 @@ ul {
   font-size: 48px;
   line-height: 1;
   padding: 0 10px;
+  vertical-align: middle;
 }
 
 .hotel_checkOut {
@@ -188,11 +190,12 @@ ul {
 .hotel_checkOut:before {
   bottom: -10px;
   color: var(--COLOR-INFO-LIGHT);
-  content: 'check out';
+  content: 'Check Out';
   font-size: 11px;
-  left: 2px;
+  left: 0;
   position: absolute;
-  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
 }
 
 .hotel_address {
@@ -223,7 +226,7 @@ ul {
   float: left;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   height: 60px;
   justify-content: center;
   text-transform: lowercase;
@@ -245,7 +248,7 @@ ul {
   float: left;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   height: 60px;
   justify-content: center;
   text-transform: uppercase;
