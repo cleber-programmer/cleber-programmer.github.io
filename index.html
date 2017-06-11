@@ -4,8 +4,10 @@
   <title>Evnts | Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="vendor/nouislider.min.css">
   <link rel="stylesheet" type="text/css" href="dist/evnts.css">
   <script type="text/javascript" src="bower_components/appbase-js/browser/appbase.js"></script>
+  <script type="text/javascript" src="vendor/nouislider.min.js"></script>
   <script type="text/javascript" src="dist/evnts.js"></script>
 </head>
 <body>
@@ -25,19 +27,20 @@
 
       <!-- THUMBNAIL -->
       <li class="form_control">
-        <input class="form_thumbnail" type="file"></input>
+        <evnts-thumbnail></evnts-thumbnail>
       </li>
 
       <!-- CHAIN -->
       <li class="form_control">
         <select class="form_chain">
+          <option value="" selected>Selecion um Grupo</option>
           <option value="xpto">Grupo XPTO</option>
         </select>
       </li>
 
       <!-- NAME -->
       <li class="form_control">
-        <input class="form_name"></input>
+        <input class="form_name" placeholder="Nome do Hotel"></input>
       </li>
 
       <!-- STAR -->
