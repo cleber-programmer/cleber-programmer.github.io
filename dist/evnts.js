@@ -1,3 +1,20 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 (function (modules, proxy) {
     Object.assign(window, {
         Rex(nameOrModule, module) {
@@ -36,6 +53,16 @@ Rex('equals', (R) => R.curry((a, b) => a === b));
 Rex('f', () => () => !1);
 Rex('guid', () => () => Math.round(Date.now() * Math.random()).toString(36));
 Rex('t', () => () => !0);
+Rex('crop', function () {
+    return function (file) {
+        return new Promise(function (resolver) {
+            (function (reader) {
+                reader.onload = resolver;
+                reader.readAsDataURL(file);
+            })(new FileReader);
+        });
+    };
+});
 Rex(function (R) {
     Object.assign(R.evnts, {
         eventPortifolio(event) {
@@ -219,6 +246,14 @@ Rex('radio', function ({ 'radio.handlers': handlers, 'radio.proxy': proxy }) {
         return { drop, off, on };
     };
 });
+Rex('sheet', function ({ 'sheet.style': style }) {
+    return function (query, ...rules) {
+        style.insertRule(`${query} { ${rules.map(([key, value]) => `${key}:${value};`)} }`, style.cssRules.length);
+    };
+});
+Rex('sheet.style', function () {
+    return document.head.appendChild(document.createElement('style'))['sheet'];
+});
 Rex(function (R) {
     Object.assign(R.storage, {
         drop() {
@@ -348,6 +383,18 @@ Rex('atom.hack', function (R) {
         return Object.getOwnPropertyNames(prototype)
             .reduce((target, key) => Object.defineProperty(target, key, Object.assign(Object.getOwnPropertyDescriptor(prototype, key), { enumerable: true })), {});
     };
+});
+Rex(function (R) {
+    Object.assign(R.atom, {
+        innerHTML(target, prop, descriptor) {
+            function hookCallback(template) {
+                this.innerHTML = template;
+                return template;
+            }
+            R.hook.after('value', descriptor, hookCallback);
+            return descriptor;
+        }
+    });
 });
 Rex('_', (R) => R.guid());
 Rex('curry.completed', (R) => (feed) => /-1/.test(feed.indexOf(R._)));
@@ -577,3 +624,21 @@ Rex(function (R) {
     });
 });
 Rex('partial', (R) => (target, ...a) => (...b) => target(...R.concat(a, b)));
+Rex(function (R) {
+    let Perfil = class Perfil {
+        selectThumbnail({ target: { files: [thumbnail] } }) {
+            return __awaiter(this, void 0, void 0, function* () {
+                R.sheet('.form_thumbnail:after', ['background-image', `url(${(yield R.crop(thumbnail)).target.result})`]);
+            });
+        }
+    };
+    __decorate([
+        R.atom.event('change', '.form_thumbnail'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], Perfil.prototype, "selectThumbnail", null);
+    Perfil = __decorate([
+        R.atom.component('form-perfil', 'form')
+    ], Perfil);
+});
